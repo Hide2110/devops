@@ -1,0 +1,9 @@
+services:
+  news-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: news-web
+    ports:
+      - "3000:80"
+    restart: always

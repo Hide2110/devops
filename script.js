@@ -1,0 +1,1 @@
+document.querySelectorAll('nav a').forEach(link=>{link.addEventListener('click',()=>{console.log('Đi tới:',link.textContent)})});

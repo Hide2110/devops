@@ -14,18 +14,15 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Login to Docker Hub
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
-          username: ${{ secrets.DOCKER_HIDE }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: ${{ secrets.DOCKERHUB_HIDE }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build Docker image
         run: |
-          docker build \
-            -t ${{ secrets.DOCKER_USERNAME }}/news-basic:latest \
-            -t ${{ secrets.DOCKER_USERNAME }}/news-basic:${{ github.sha }} .
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/news-basic:latest .
 
       - name: Push Docker image
         run: |
-          docker push ${{ secrets.DOCKER_USERNAME }}/news-basic:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/news-basic:${{ github.sha }}
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/news-basic:latest

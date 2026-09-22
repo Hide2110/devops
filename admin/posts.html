@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <title>Quản lý bài viết</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                📰 Tin Mới 24h
+            </div>
+
+            <nav>
+                <a href="index.html">
+                    📊 Dashboard
+                </a>
+
+                <a
+                    class="active"
+                    href="posts.html">
+                    📰 Bài viết
+                </a>
+
+                <a href="categories.html">
+                    📂 Danh mục
+                </a>
+
+                <a href="users.html">
+                    👤 Tài khoản
+                </a>
+            </nav>
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+                🚪 Đăng xuất
+            </button>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h1>
+                        Quản lý bài viết
+                    </h1>
+
+                    <p>
+                        Thêm, sửa, xóa và đổi trạng thái bài viết.
+                    </p>
+                </div>
+
+                <div class="admin-profile">
+                    👤 Admin
+                </div>
+
+            </header>
+
+
+            <!-- ================= CONTENT ================= -->
+            <section class="content-card">
+
+                <!-- CONTENT HEADER -->
+                <div class="content-header">
+
+                    <div>
+                        <h2>
+                            Danh sách bài viết
+                        </h2>
+
+                        <p id="postCount"></p>
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        onclick="openPostModal()">
+                        + Thêm bài viết
+                    </button>
+
+                </div>
+
+
+                <!-- ================= TOOLBAR ================= -->
+                <div class="toolbar">
+
+                    <input
+                        id="searchPost"
+                        class="search-input"
+                        placeholder="🔎 Tìm tiêu đề..."
+                        oninput="renderPosts()">
+
+
+                    <select
+                        id="filterCategory"
+                        class="select-input"
+                        onchange="renderPosts()">
+                    </select>
+
+
+                    <select
+                        id="filterStatus"
+                        class="select-input"
+                        onchange="renderPosts()">
+
+                        <option value="">
+                            Tất cả trạng thái
+                        </option>
+
+                        <option value="published">
+                            Đã đăng
+                        </option>
+
+                        <option value="draft">
+                            Bản nháp
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ================= POST TABLE ================= -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Tiêu đề</th>
+                                <th>Danh mục</th>
+                                <th>Ngày</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="postTable">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= POST MODAL ================= -->
+    <div
+        id="postModal"
+        class="modal hidden">
+
+        <div class="modal-box">
+
+            <!-- MODAL HEADER -->
+            <div class="modal-header">
+
+                <h2 id="postModalTitle">
+                    Thêm bài viết
+                </h2>
+
+                <button
+                    type="button"
+                    class="close-button"
+                    onclick="closePostModal()">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- POST FORM -->
+            <form id="postForm">
+
+                <input
+                    type="hidden"
+                    id="postId">
+
+
+                <!-- TIÊU ĐỀ -->
+                <div class="form-group">
+
+                    <label for="postTitle">
+                        Tiêu đề
+                    </label>
+
+                    <input
+                        type="text"
+                        id="postTitle"
+                        required>
+
+                </div>
+
+
+                <!-- DANH MỤC -->
+                <div class="form-group">
+
+                    <label for="postCategory">
+                        Danh mục
+                    </label>
+
+                    <select
+                        id="postCategory"
+                        required>
+                    </select>
+
+                </div>
+
+
+                <!-- ẢNH -->
+                <div class="form-group">
+
+                    <label for="postImage">
+                        Ảnh URL
+                    </label>
+
+                    <input
+                        type="text"
+                        id="postImage">
+
+                </div>
+
+
+                <!-- NỘI DUNG -->
+                <div class="form-group">
+
+                    <label for="postContent">
+                        Nội dung
+                    </label>
+
+                    <textarea
+                        id="postContent"
+                        rows="7"
+                        required>
+                    </textarea>
+
+                </div>
+
+
+                <!-- TRẠNG THÁI -->
+                <div class="form-group">
+
+                    <label for="postStatus">
+                        Trạng thái
+                    </label>
+
+                    <select id="postStatus">
+
+                        <option value="published">
+                            Đã đăng
+                        </option>
+
+                        <option value="draft">
+                            Bản nháp
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MODAL ACTIONS -->
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        onclick="closePostModal()">
+                        Hủy
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Lưu bài viết
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/admin.js"></script>
+    <script src="js/posts.js"></script>
+
+</body>
+
+</html>

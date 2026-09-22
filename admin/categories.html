@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Quản lý danh mục</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                📰 Tin Mới 24h
+            </div>
+
+            <nav>
+                <a href="index.html">
+                    📊 Dashboard
+                </a>
+
+                <a href="posts.html">
+                    📰 Bài viết
+                </a>
+
+                <a
+                    class="active"
+                    href="categories.html">
+                    📂 Danh mục
+                </a>
+
+                <a href="users.html">
+                    👤 Tài khoản
+                </a>
+            </nav>
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+                🚪 Đăng xuất
+            </button>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+                    <h1>
+                        Quản lý danh mục
+                    </h1>
+
+                    <p>
+                        Thêm, sửa, xóa danh mục.
+                    </p>
+                </div>
+
+                <div class="admin-profile">
+                    👤 Admin
+                </div>
+
+            </header>
+
+
+            <!-- ================= CONTENT ================= -->
+            <section class="content-card">
+
+                <!-- CONTENT HEADER -->
+                <div class="content-header">
+
+                    <div>
+                        <h2>
+                            Danh sách danh mục
+                        </h2>
+
+                        <p id="categoryCount"></p>
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        onclick="openCategoryModal()">
+                        + Thêm danh mục
+                    </button>
+
+                </div>
+
+
+                <!-- ================= TABLE ================= -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th>Slug</th>
+                                <th>Số bài</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="categoryTable">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= CATEGORY MODAL ================= -->
+    <div
+        id="categoryModal"
+        class="modal hidden">
+
+        <div class="modal-box small-modal">
+
+            <!-- MODAL HEADER -->
+            <div class="modal-header">
+
+                <h2 id="categoryModalTitle">
+                    Thêm danh mục
+                </h2>
+
+                <button
+                    type="button"
+                    class="close-button"
+                    onclick="closeCategoryModal()">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- MODAL FORM -->
+            <form id="categoryForm">
+
+                <input
+                    type="hidden"
+                    id="categoryId">
+
+
+                <!-- CATEGORY NAME -->
+                <div class="form-group">
+
+                    <label for="categoryName">
+                        Tên danh mục
+                    </label>
+
+                    <input
+                        type="text"
+                        id="categoryName"
+                        required>
+
+                </div>
+
+
+                <!-- CATEGORY SLUG -->
+                <div class="form-group">
+
+                    <label for="categorySlug">
+                        Slug
+                    </label>
+
+                    <input
+                        type="text"
+                        id="categorySlug"
+                        required>
+
+                </div>
+
+
+                <!-- MODAL ACTIONS -->
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        onclick="closeCategoryModal()">
+                        Hủy
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Lưu
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/admin.js"></script>
+    <script src="js/categories.js"></script>
+
+</body>
+
+</html>

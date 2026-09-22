@@ -1,0 +1,3724 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tin Mới 24h</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #f3f4f6;
+            color: #1f2937;
+        }
+
+        button,
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+
+        /* ========================================
+           HEADER TRANG CHỦ
+        ======================================== */
+
+        .site-header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: auto;
+            min-height: 70px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 700;
+            color: #2563eb;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .main-nav button {
+            border: none;
+            background: none;
+            color: #374151;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 8px;
+        }
+
+        .main-nav button:hover {
+            color: #2563eb;
+        }
+
+        .login-button {
+            background: #2563eb !important;
+            color: white !important;
+            border-radius: 7px;
+            padding: 10px 16px !important;
+        }
+
+        .login-button:hover {
+            background: #1d4ed8 !important;
+        }
+
+
+        /* ========================================
+           TRANG CHỦ
+        ======================================== */
+
+        #homePage {
+            display: block;
+        }
+
+        .hero {
+            max-width: 1200px;
+            margin: 25px auto;
+
+            padding: 40px 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #2563eb,
+                    #1e40af
+                );
+
+            color: white;
+            border-radius: 12px;
+        }
+
+        .hero h1 {
+            font-size: 34px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            opacity: .95;
+        }
+
+        .news-container {
+            max-width: 1200px;
+            margin: 25px auto;
+            padding: 0 20px;
+        }
+
+        .news-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+
+            border: 1px solid #e5e7eb;
+
+            transition: .2s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-3px);
+            box-shadow:
+                0 8px 20px
+                rgba(0, 0, 0, .08);
+        }
+
+        .news-card .category {
+            display: inline-block;
+
+            background: #dbeafe;
+            color: #1d4ed8;
+
+            padding: 5px 9px;
+            border-radius: 5px;
+
+            font-size: 12px;
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+        .news-card h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .news-card p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .news-date {
+            display: block;
+            margin-top: 15px;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+
+        /* ========================================
+           LOGIN
+        ======================================== */
+
+        #loginPage {
+            display: none;
+
+            min-height: calc(100vh - 70px);
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+
+            background: white;
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(0, 0, 0, .1);
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .login-box .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+
+            padding: 11px 12px;
+
+            border: 1px solid #d1d5db;
+            border-radius: 7px;
+
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #2563eb;
+        }
+
+        .login-submit {
+            width: 100%;
+
+            border: none;
+
+            background: #2563eb;
+            color: white;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .login-submit:hover {
+            background: #1d4ed8;
+        }
+
+        .login-error {
+            color: #dc2626;
+            background: #fee2e2;
+
+            padding: 10px;
+
+            border-radius: 6px;
+
+            margin-bottom: 15px;
+
+            display: none;
+        }
+
+        .back-home {
+            width: 100%;
+            margin-top: 12px;
+
+            border: none;
+            background: transparent;
+
+            color: #2563eb;
+            padding: 8px;
+        }
+
+
+        /* ========================================
+           ADMIN
+        ======================================== */
+
+        #adminPage {
+            display: none;
+            min-height: calc(100vh - 70px);
+        }
+
+        .admin-layout {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        .sidebar {
+            width: 240px;
+
+            background: #111827;
+            color: white;
+
+            padding: 20px;
+
+            flex-shrink: 0;
+        }
+
+        .sidebar-logo {
+            font-size: 20px;
+            font-weight: bold;
+
+            margin-bottom: 30px;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .sidebar-nav button {
+            width: 100%;
+
+            border: none;
+            background: transparent;
+
+            color: #d1d5db;
+
+            text-align: left;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+        }
+
+        .sidebar-nav button:hover,
+        .sidebar-nav button.active {
+            background: #2563eb;
+            color: white;
+        }
+
+        .logout-button {
+            width: 100%;
+
+            margin-top: 30px;
+
+            padding: 11px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #dc2626;
+            color: white;
+
+            font-weight: 600;
+        }
+
+        .logout-button:hover {
+            background: #b91c1c;
+        }
+
+
+        /* ========================================
+           ADMIN MAIN
+        ======================================== */
+
+        .admin-main {
+            flex: 1;
+            padding: 25px;
+
+            overflow-x: auto;
+        }
+
+        .admin-topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 25px;
+        }
+
+        .admin-topbar h1 {
+            margin-bottom: 5px;
+        }
+
+        .admin-topbar p {
+            color: #6b7280;
+        }
+
+        .admin-profile {
+            background: white;
+
+            padding: 10px 15px;
+
+            border-radius: 7px;
+
+            border: 1px solid #e5e7eb;
+
+            font-weight: 600;
+        }
+
+
+        /* ========================================
+           STATISTICS
+        ======================================== */
+
+        .statistics {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 18px;
+
+            margin-bottom: 25px;
+        }
+
+        .stat-card {
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            border: 1px solid #e5e7eb;
+
+            display: flex;
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .stat-icon {
+            font-size: 28px;
+        }
+
+        .stat-card h3 {
+            font-size: 25px;
+            margin-bottom: 4px;
+        }
+
+        .stat-card p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+
+        /* ========================================
+           ADMIN CONTENT
+        ======================================== */
+
+        .admin-section {
+            display: none;
+        }
+
+        .admin-section.active {
+            display: block;
+        }
+
+        .content-card {
+            background: white;
+
+            border-radius: 10px;
+
+            border: 1px solid #e5e7eb;
+
+            padding: 20px;
+
+            margin-bottom: 20px;
+        }
+
+        .content-header {
+            display: flex;
+
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 20px;
+        }
+
+        .content-header p {
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        .primary-button {
+            border: none;
+
+            background: #2563eb;
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 7px;
+
+            font-weight: 600;
+        }
+
+        .primary-button:hover {
+            background: #1d4ed8;
+        }
+
+        .danger-button {
+            border: none;
+
+            background: #dc2626;
+            color: white;
+
+            padding: 7px 10px;
+
+            border-radius: 5px;
+        }
+
+        .edit-button {
+            border: none;
+
+            background: #f59e0b;
+            color: white;
+
+            padding: 7px 10px;
+
+            border-radius: 5px;
+
+            margin-right: 5px;
+        }
+
+
+        /* ========================================
+           TABLE
+        ======================================== */
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+
+            min-width: 700px;
+        }
+
+        th,
+        td {
+            padding: 12px;
+
+            border-bottom:
+                1px solid #e5e7eb;
+
+            text-align: left;
+        }
+
+        th {
+            background: #f9fafb;
+            font-size: 14px;
+        }
+
+        td {
+            font-size: 14px;
+        }
+
+        .status {
+            display: inline-block;
+
+            padding: 5px 8px;
+
+            border-radius: 5px;
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+        .published {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .draft {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+
+        /* ========================================
+           MODAL
+        ======================================== */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(0, 0, 0, .5);
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            z-index: 500;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-box {
+            width: 100%;
+            max-width: 550px;
+
+            background: white;
+
+            border-radius: 10px;
+
+            padding: 25px;
+
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .close-modal {
+            border: none;
+            background: transparent;
+
+            font-size: 25px;
+        }
+
+        .modal-actions {
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .cancel-button {
+            border: none;
+
+            background: #e5e7eb;
+
+            padding: 10px 15px;
+
+            border-radius: 7px;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        .footer {
+            text-align: center;
+
+            padding: 30px;
+
+            color: #6b7280;
+        }
+
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 900px) {
+
+            .news-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .statistics {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .header-inner {
+                flex-direction: column;
+                gap: 10px;
+                padding: 15px;
+            }
+
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .statistics {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-layout {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .sidebar-nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .sidebar-nav button {
+                width: auto;
+            }
+
+            .admin-topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="site-header">
+
+    <div class="header-inner">
+
+        <div class="logo">
+            📰 Tin Mới 24h
+        </div>
+
+        <nav class="main-nav">
+
+            <button onclick="showHome()">
+                🏠 Trang chủ
+            </button>
+
+            <button onclick="showNews()">
+                📰 Tin mới
+            </button>
+
+            <button
+                id="loginNavButton"
+                class="login-button"
+                onclick="showLogin()"
+            >
+                🔐 Đăng nhập
+            </button>
+
+            <button
+                id="adminNavButton"
+                style="display:none"
+                onclick="showAdmin()"
+            >
+                ⚙️ Quản trị
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     TRANG CHỦ
+===================================================== -->
+
+<section id="homePage">
+
+    <div class="hero">
+
+        <h1>
+            Tin Mới 24h
+        </h1>
+
+        <p>
+            Cập nhật những tin tức mới nhất
+            trong ngày.
+        </p>
+
+    </div>
+
+
+    <div class="news-container">
+
+        <h2>
+            📰 Tin tức nổi bật
+        </h2>
+
+        <div
+            class="news-grid"
+            id="homeNewsGrid"
+        >
+
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        © 2026 Tin Mới 24h
+    </footer>
+
+</section>
+
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<section id="loginPage">
+
+    <div class="login-box">
+
+        <h2>
+            🔐 Đăng nhập Admin
+        </h2>
+
+        <p class="subtitle">
+            Đăng nhập để quản lý website
+        </p>
+
+        <div
+            id="loginError"
+            class="login-error"
+        >
+        </div>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+
+                <label>
+                    Tên đăng nhập
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Nhập username"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Mật khẩu
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Nhập mật khẩu"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-submit"
+            >
+                🔐 Đăng nhập
+            </button>
+
+        </form>
+
+
+        <button
+            class="back-home"
+            onclick="showHome()"
+        >
+            ← Quay lại trang chủ
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ADMIN
+===================================================== -->
+
+<section id="adminPage">
+
+    <div class="admin-layout">
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                📰 Tin Mới 24h
+            </div>
+
+
+            <nav class="sidebar-nav">
+
+                <button
+                    class="active"
+                    data-section="dashboard"
+                    onclick="showAdminSection('dashboard')"
+                >
+                    📊 Dashboard
+                </button>
+
+                <button
+                    data-section="posts"
+                    onclick="showAdminSection('posts')"
+                >
+                    📰 Bài viết
+                </button>
+
+                <button
+                    data-section="categories"
+                    onclick="showAdminSection('categories')"
+                >
+                    📂 Danh mục
+                </button>
+
+                <button
+                    data-section="users"
+                    onclick="showAdminSection('users')"
+                >
+                    👤 Tài khoản
+                </button>
+
+            </nav>
+
+
+            <button
+                class="logout-button"
+                onclick="logout()"
+            >
+                🚪 Đăng xuất
+            </button>
+
+        </aside>
+
+
+        <!-- ADMIN MAIN -->
+
+        <main class="admin-main">
+
+
+            <!-- TOPBAR -->
+
+            <header class="admin-topbar">
+
+                <div>
+
+                    <h1 id="adminTitle">
+                        Dashboard
+                    </h1>
+
+                    <p id="welcomeText">
+                        Chào mừng Admin quay trở lại!
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="admin-profile"
+                    id="adminProfile"
+                >
+                    👤 Admin
+                </div>
+
+            </header>
+
+
+            <!-- ==========================================
+                 DASHBOARD
+            ========================================== -->
+
+            <section
+                id="dashboardSection"
+                class="admin-section active"
+            >
+
+                <div class="statistics">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📰
+                        </div>
+
+                        <div>
+
+                            <h3 id="totalPosts">
+                                0
+                            </h3>
+
+                            <p>
+                                Tổng bài viết
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📂
+                        </div>
+
+                        <div>
+
+                            <h3 id="totalCategories">
+                                0
+                            </h3>
+
+                            <p>
+                                Danh mục
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            👁️
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                5.2K
+                            </h3>
+
+                            <p>
+                                Lượt xem
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            👤
+                        </div>
+
+                        <div>
+
+                            <h3 id="totalUsers">
+                                0
+                            </h3>
+
+                            <p>
+                                Tài khoản
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <div class="content-header">
+
+                        <div>
+
+                            <h2>
+                                Bài viết gần đây
+                            </h2>
+
+                            <p>
+                                Danh sách bài viết mới nhất
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="showAdminSection('posts')"
+                        >
+                            + Quản lý bài viết
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Danh mục</th>
+                                    <th>Ngày đăng</th>
+                                    <th>Trạng thái</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="recentPosts">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 QUẢN LÝ BÀI VIẾT
+            ========================================== -->
+
+            <section
+                id="postsSection"
+                class="admin-section"
+            >
+
+                <div class="content-card">
+
+                    <div class="content-header">
+
+                        <div>
+
+                            <h2>
+                                📰 Quản lý bài viết
+                            </h2>
+
+                            <p>
+                                Thêm, sửa và xóa bài viết
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="openPostModal()"
+                        >
+                            + Thêm bài viết
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>ID</th>
+                                    <th>Tiêu đề</th>
+                                    <th>Danh mục</th>
+                                    <th>Ngày</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="postsTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 QUẢN LÝ DANH MỤC
+            ========================================== -->
+
+            <section
+                id="categoriesSection"
+                class="admin-section"
+            >
+
+                <div class="content-card">
+
+                    <div class="content-header">
+
+                        <div>
+
+                            <h2>
+                                📂 Quản lý danh mục
+                            </h2>
+
+                            <p>
+                                Quản lý danh mục tin tức
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="openCategoryModal()"
+                        >
+                            + Thêm danh mục
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>ID</th>
+                                    <th>Tên danh mục</th>
+                                    <th>Mô tả</th>
+                                    <th>Thao tác</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="categoriesTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 QUẢN LÝ TÀI KHOẢN
+            ========================================== -->
+
+            <section
+                id="usersSection"
+                class="admin-section"
+            >
+
+                <div class="content-card">
+
+                    <div class="content-header">
+
+                        <div>
+
+                            <h2>
+                                👤 Quản lý tài khoản
+                            </h2>
+
+                            <p>
+                                Quản lý tài khoản quản trị
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="primary-button"
+                            onclick="openUserModal()"
+                        >
+                            + Thêm tài khoản
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>ID</th>
+                                    <th>Họ tên</th>
+                                    <th>Username</th>
+                                    <th>Email</th>
+                                    <th>Quyền</th>
+                                    <th>Thao tác</th>
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody id="usersTable">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MODAL BÀI VIẾT
+===================================================== -->
+
+<div
+    id="postModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2 id="postModalTitle">
+                Thêm bài viết
+            </h2>
+
+            <button
+                class="close-modal"
+                onclick="closeModal('postModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="postForm">
+
+            <input
+                type="hidden"
+                id="postId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Tiêu đề
+                </label>
+
+                <input
+                    type="text"
+                    id="postTitle"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Danh mục
+                </label>
+
+                <select
+                    id="postCategory"
+                    required
+                >
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Nội dung
+                </label>
+
+                <textarea
+                    id="postContent"
+                    rows="5"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Trạng thái
+                </label>
+
+                <select id="postStatus">
+
+                    <option value="published">
+                        Đã đăng
+                    </option>
+
+                    <option value="draft">
+                        Bản nháp
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    onclick="closeModal('postModal')"
+                >
+                    Hủy
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Lưu
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL DANH MỤC
+===================================================== -->
+
+<div
+    id="categoryModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                Danh mục
+            </h2>
+
+            <button
+                class="close-modal"
+                onclick="closeModal('categoryModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="categoryForm">
+
+            <input
+                type="hidden"
+                id="categoryId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Tên danh mục
+                </label>
+
+                <input
+                    type="text"
+                    id="categoryName"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Mô tả
+                </label>
+
+                <textarea
+                    id="categoryDescription"
+                    rows="4"
+                ></textarea>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    onclick="closeModal('categoryModal')"
+                >
+                    Hủy
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Lưu
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL TÀI KHOẢN
+===================================================== -->
+
+<div
+    id="userModal"
+    class="modal"
+>
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                Tài khoản
+            </h2>
+
+            <button
+                class="close-modal"
+                onclick="closeModal('userModal')"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="userForm">
+
+            <input
+                type="hidden"
+                id="userId"
+            >
+
+
+            <div class="form-group">
+
+                <label>
+                    Họ tên
+                </label>
+
+                <input
+                    type="text"
+                    id="userName"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="userUsername"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="userEmail"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Mật khẩu
+                </label>
+
+                <input
+                    type="password"
+                    id="userPassword"
+                    placeholder="Nhập mật khẩu"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Quyền
+                </label>
+
+                <select id="userRole">
+
+                    <option value="Admin">
+                        Admin
+                    </option>
+
+                    <option value="Editor">
+                        Editor
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    onclick="closeModal('userModal')"
+                >
+                    Hủy
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Lưu
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* =====================================================
+       DỮ LIỆU MẶC ĐỊNH
+    ===================================================== */
+
+    const DEFAULT_USERS = [
+        {
+            id: 1,
+            name: "Quản trị viên",
+            username: "admin",
+            email: "admin@tinmoi24h.vn",
+            role: "Admin",
+            password: "123456"
+        }
+    ];
+
+
+    const DEFAULT_CATEGORIES = [
+        {
+            id: 1,
+            name: "Công nghệ",
+            description: "Tin tức công nghệ"
+        },
+        {
+            id: 2,
+            name: "Thể thao",
+            description: "Tin tức thể thao"
+        },
+        {
+            id: 3,
+            name: "Đời sống",
+            description: "Tin tức đời sống"
+        },
+        {
+            id: 4,
+            name: "Kinh tế",
+            description: "Tin tức kinh tế"
+        },
+        {
+            id: 5,
+            name: "Giải trí",
+            description: "Tin tức giải trí"
+        }
+    ];
+
+
+    const DEFAULT_POSTS = [
+        {
+            id: 1,
+            title: "Công nghệ AI đang thay đổi thế giới",
+            category: "Công nghệ",
+            content: "Những thay đổi mới nhất của công nghệ AI.",
+            date: "22/09/2026",
+            status: "published"
+        },
+        {
+            id: 2,
+            title: "Những trận đấu đáng chú ý hôm nay",
+            category: "Thể thao",
+            content: "Tổng hợp các thông tin thể thao đáng chú ý.",
+            date: "22/09/2026",
+            status: "published"
+        },
+        {
+            id: 3,
+            title: "Xu hướng sống xanh năm 2026",
+            category: "Đời sống",
+            content: "Những xu hướng sống xanh đang được quan tâm.",
+            date: "21/09/2026",
+            status: "draft"
+        }
+    ];
+
+
+    /* =====================================================
+       LOCAL STORAGE
+    ===================================================== */
+
+    function getUsers() {
+
+        const data =
+            localStorage.getItem("newsUsers");
+
+        if (!data) {
+
+            localStorage.setItem(
+                "newsUsers",
+                JSON.stringify(DEFAULT_USERS)
+            );
+
+            return [...DEFAULT_USERS];
+        }
+
+        try {
+
+            return JSON.parse(data);
+
+        } catch {
+
+            return [...DEFAULT_USERS];
+
+        }
+
+    }
+
+
+    function getCategories() {
+
+        const data =
+            localStorage.getItem("newsCategories");
+
+        if (!data) {
+
+            localStorage.setItem(
+                "newsCategories",
+                JSON.stringify(DEFAULT_CATEGORIES)
+            );
+
+            return [...DEFAULT_CATEGORIES];
+        }
+
+        try {
+
+            return JSON.parse(data);
+
+        } catch {
+
+            return [...DEFAULT_CATEGORIES];
+
+        }
+
+    }
+
+
+    function getPosts() {
+
+        const data =
+            localStorage.getItem("newsPosts");
+
+        if (!data) {
+
+            localStorage.setItem(
+                "newsPosts",
+                JSON.stringify(DEFAULT_POSTS)
+            );
+
+            return [...DEFAULT_POSTS];
+        }
+
+        try {
+
+            return JSON.parse(data);
+
+        } catch {
+
+            return [...DEFAULT_POSTS];
+
+        }
+
+    }
+
+
+    function saveUsers(users) {
+
+        localStorage.setItem(
+            "newsUsers",
+            JSON.stringify(users)
+        );
+
+    }
+
+
+    function saveCategories(categories) {
+
+        localStorage.setItem(
+            "newsCategories",
+            JSON.stringify(categories)
+        );
+
+    }
+
+
+    function savePosts(posts) {
+
+        localStorage.setItem(
+            "newsPosts",
+            JSON.stringify(posts)
+        );
+
+    }
+
+
+    /* =====================================================
+       CHUYỂN TRANG
+    ===================================================== */
+
+    function hideAllPages() {
+
+        document.getElementById("homePage").style.display =
+            "none";
+
+        document.getElementById("loginPage").style.display =
+            "none";
+
+        document.getElementById("adminPage").style.display =
+            "none";
+
+    }
+
+
+    function showHome() {
+
+        hideAllPages();
+
+        document.getElementById("homePage").style.display =
+            "block";
+
+        renderHomeNews();
+
+    }
+
+
+    function showNews() {
+
+        showHome();
+
+        window.scrollTo({
+            top: 350,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    function showLogin() {
+
+        hideAllPages();
+
+        document.getElementById("loginPage").style.display =
+            "flex";
+
+    }
+
+
+    function showAdmin() {
+
+        if (
+            localStorage.getItem("adminLoggedIn")
+            !== "true"
+        ) {
+
+            showLogin();
+            return;
+
+        }
+
+        hideAllPages();
+
+        document.getElementById("adminPage").style.display =
+            "block";
+
+        loadAdmin();
+
+    }
+
+
+    /* =====================================================
+       LOGIN
+    ===================================================== */
+
+    document
+        .getElementById("loginForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const username =
+                    document
+                        .getElementById("username")
+                        .value
+                        .trim();
+
+
+                const password =
+                    document
+                        .getElementById("password")
+                        .value;
+
+
+                const error =
+                    document.getElementById(
+                        "loginError"
+                    );
+
+
+                const users =
+                    getUsers();
+
+
+                const user =
+                    users.find(account =>
+
+                        account.username === username
+                        &&
+                        account.password === password
+
+                    );
+
+
+                if (!user) {
+
+                    error.textContent =
+                        "❌ Tên đăng nhập hoặc mật khẩu không đúng!";
+
+                    error.style.display =
+                        "block";
+
+                    return;
+
+                }
+
+
+                if (
+                    user.role !== "Admin"
+                    &&
+                    user.role !== "Editor"
+                ) {
+
+                    error.textContent =
+                        "❌ Tài khoản không có quyền quản trị.";
+
+                    error.style.display =
+                        "block";
+
+                    return;
+
+                }
+
+
+                localStorage.setItem(
+                    "adminLoggedIn",
+                    "true"
+                );
+
+
+                localStorage.setItem(
+                    "currentAdmin",
+                    JSON.stringify(user)
+                );
+
+
+                error.style.display =
+                    "none";
+
+
+                document
+                    .getElementById("loginForm")
+                    .reset();
+
+
+                updateLoginButton();
+
+
+                showAdmin();
+
+            }
+        );
+
+
+    /* =====================================================
+       ADMIN
+    ===================================================== */
+
+    function loadAdmin() {
+
+        const currentAdmin =
+            JSON.parse(
+                localStorage.getItem(
+                    "currentAdmin"
+                )
+                || "null"
+            );
+
+
+        if (!currentAdmin) {
+
+            showLogin();
+            return;
+
+        }
+
+
+        document
+            .getElementById("adminProfile")
+            .textContent =
+            "👤 " + currentAdmin.name;
+
+
+        document
+            .getElementById("welcomeText")
+            .textContent =
+            "Chào mừng " +
+            currentAdmin.name +
+            " quay trở lại!";
+
+
+        updateStatistics();
+
+        renderRecentPosts();
+
+        renderPosts();
+
+        renderCategories();
+
+        renderUsers();
+
+        updateCategorySelect();
+
+    }
+
+
+    function updateStatistics() {
+
+        const posts =
+            getPosts();
+
+        const categories =
+            getCategories();
+
+        const users =
+            getUsers();
+
+
+        document
+            .getElementById("totalPosts")
+            .textContent =
+            posts.length;
+
+
+        document
+            .getElementById("totalCategories")
+            .textContent =
+            categories.length;
+
+
+        document
+            .getElementById("totalUsers")
+            .textContent =
+            users.length;
+
+    }
+
+
+    /* =====================================================
+       ADMIN SECTION
+    ===================================================== */
+
+    function showAdminSection(section) {
+
+        const loggedIn =
+            localStorage.getItem(
+                "adminLoggedIn"
+            );
+
+
+        if (loggedIn !== "true") {
+
+            showLogin();
+            return;
+
+        }
+
+
+        const sections = [
+            "dashboard",
+            "posts",
+            "categories",
+            "users"
+        ];
+
+
+        sections.forEach(name => {
+
+            const element =
+                document.getElementById(
+                    name + "Section"
+                );
+
+            if (element) {
+
+                element.classList.remove(
+                    "active"
+                );
+
+            }
+
+        });
+
+
+        const target =
+            document.getElementById(
+                section + "Section"
+            );
+
+
+        if (target) {
+
+            target.classList.add(
+                "active"
+            );
+
+        }
+
+
+        document
+            .querySelectorAll(
+                ".sidebar-nav button"
+            )
+            .forEach(button => {
+
+                button.classList.remove(
+                    "active"
+                );
+
+
+                if (
+                    button.dataset.section
+                    === section
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                }
+
+            });
+
+
+        const titles = {
+
+            dashboard: "Dashboard",
+
+            posts: "Quản lý bài viết",
+
+            categories: "Quản lý danh mục",
+
+            users: "Quản lý tài khoản"
+
+        };
+
+
+        document
+            .getElementById("adminTitle")
+            .textContent =
+            titles[section];
+
+
+        if (section === "posts") {
+
+            renderPosts();
+
+        }
+
+        if (section === "categories") {
+
+            renderCategories();
+
+        }
+
+        if (section === "users") {
+
+            renderUsers();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       RECENT POSTS
+    ===================================================== */
+
+    function renderRecentPosts() {
+
+        const tbody =
+            document.getElementById(
+                "recentPosts"
+            );
+
+
+        const posts =
+            getPosts();
+
+
+        if (posts.length === 0) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td
+                        colspan="5"
+                        style="text-align:center;padding:30px"
+                    >
+                        Chưa có bài viết
+                    </td>
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        tbody.innerHTML =
+            posts
+                .slice(0, 5)
+                .map(post => {
+
+                    return `
+                        <tr>
+
+                            <td>
+                                #${post.id}
+                            </td>
+
+                            <td>
+                                ${escapeHTML(post.title)}
+                            </td>
+
+                            <td>
+                                ${escapeHTML(post.category)}
+                            </td>
+
+                            <td>
+                                ${post.date || "Chưa có"}
+                            </td>
+
+                            <td>
+                                ${
+                                    post.status === "published"
+                                    ?
+                                    '<span class="status published">Đã đăng</span>'
+                                    :
+                                    '<span class="status draft">Bản nháp</span>'
+                                }
+                            </td>
+
+                        </tr>
+                    `;
+
+                })
+                .join("");
+
+    }
+
+
+    /* =====================================================
+       QUẢN LÝ BÀI VIẾT
+    ===================================================== */
+
+    function renderPosts() {
+
+        const tbody =
+            document.getElementById(
+                "postsTable"
+            );
+
+
+        const posts =
+            getPosts();
+
+
+        if (posts.length === 0) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td
+                        colspan="6"
+                        style="text-align:center;padding:30px"
+                    >
+                        Chưa có bài viết
+                    </td>
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        tbody.innerHTML =
+            posts.map(post => {
+
+                return `
+                    <tr>
+
+                        <td>
+                            #${post.id}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(post.title)}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(post.category)}
+                        </td>
+
+                        <td>
+                            ${post.date}
+                        </td>
+
+                        <td>
+
+                            ${
+                                post.status === "published"
+
+                                ?
+
+                                '<span class="status published">Đã đăng</span>'
+
+                                :
+
+                                '<span class="status draft">Bản nháp</span>'
+                            }
+
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="edit-button"
+                                onclick="editPost(${post.id})"
+                            >
+                                Sửa
+                            </button>
+
+                            <button
+                                class="danger-button"
+                                onclick="deletePost(${post.id})"
+                            >
+                                Xóa
+                            </button>
+
+                        </td>
+
+                    </tr>
+                `;
+
+            }).join("");
+
+    }
+
+
+    function openPostModal(id = null) {
+
+        document
+            .getElementById("postForm")
+            .reset();
+
+
+        document
+            .getElementById("postId")
+            .value = "";
+
+
+        document
+            .getElementById("postModalTitle")
+            .textContent =
+            "Thêm bài viết";
+
+
+        updateCategorySelect();
+
+
+        if (id !== null) {
+
+            editPost(id);
+
+            return;
+
+        }
+
+
+        document
+            .getElementById("postModal")
+            .classList.add("show");
+
+    }
+
+
+    function editPost(id) {
+
+        const posts =
+            getPosts();
+
+
+        const post =
+            posts.find(
+                item => item.id === id
+            );
+
+
+        if (!post) return;
+
+
+        updateCategorySelect();
+
+
+        document
+            .getElementById("postId")
+            .value =
+            post.id;
+
+
+        document
+            .getElementById("postTitle")
+            .value =
+            post.title;
+
+
+        document
+            .getElementById("postCategory")
+            .value =
+            post.category;
+
+
+        document
+            .getElementById("postContent")
+            .value =
+            post.content || "";
+
+
+        document
+            .getElementById("postStatus")
+            .value =
+            post.status;
+
+
+        document
+            .getElementById("postModalTitle")
+            .textContent =
+            "Chỉnh sửa bài viết";
+
+
+        document
+            .getElementById("postModal")
+            .classList.add("show");
+
+    }
+
+
+    document
+        .getElementById("postForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const id =
+                    document
+                        .getElementById("postId")
+                        .value;
+
+
+                const title =
+                    document
+                        .getElementById("postTitle")
+                        .value
+                        .trim();
+
+
+                const category =
+                    document
+                        .getElementById("postCategory")
+                        .value;
+
+
+                const content =
+                    document
+                        .getElementById("postContent")
+                        .value
+                        .trim();
+
+
+                const status =
+                    document
+                        .getElementById("postStatus")
+                        .value;
+
+
+                const posts =
+                    getPosts();
+
+
+                if (id) {
+
+                    const index =
+                        posts.findIndex(
+                            post =>
+                                post.id ===
+                                Number(id)
+                        );
+
+
+                    if (index !== -1) {
+
+                        posts[index] = {
+
+                            ...posts[index],
+
+                            title,
+
+                            category,
+
+                            content,
+
+                            status
+
+                        };
+
+                    }
+
+                } else {
+
+                    const newPost = {
+
+                        id:
+                            posts.length
+                            ?
+                            Math.max(
+                                ...posts.map(
+                                    post =>
+                                        Number(post.id)
+                                )
+                            ) + 1
+                            :
+                            1,
+
+                        title,
+
+                        category,
+
+                        content,
+
+                        date:
+                            new Date()
+                                .toLocaleDateString(
+                                    "vi-VN"
+                                ),
+
+                        status
+
+                    };
+
+
+                    posts.unshift(
+                        newPost
+                    );
+
+                }
+
+
+                savePosts(posts);
+
+
+                closeModal(
+                    "postModal"
+                );
+
+
+                loadAdmin();
+
+
+                showAdminSection(
+                    "posts"
+                );
+
+            }
+        );
+
+
+    function deletePost(id) {
+
+        if (
+            !confirm(
+                "Bạn có chắc muốn xóa bài viết này?"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        let posts =
+            getPosts();
+
+
+        posts =
+            posts.filter(
+                post =>
+                    post.id !== id
+            );
+
+
+        savePosts(posts);
+
+
+        loadAdmin();
+
+        showAdminSection(
+            "posts"
+        );
+
+    }
+
+
+    /* =====================================================
+       DANH MỤC
+    ===================================================== */
+
+    function renderCategories() {
+
+        const tbody =
+            document.getElementById(
+                "categoriesTable"
+            );
+
+
+        const categories =
+            getCategories();
+
+
+        if (categories.length === 0) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td
+                        colspan="4"
+                        style="text-align:center;padding:30px"
+                    >
+                        Chưa có danh mục
+                    </td>
+                </tr>
+            `;
+
+            return;
+
+        }
+
+
+        tbody.innerHTML =
+            categories.map(category => {
+
+                return `
+                    <tr>
+
+                        <td>
+                            #${category.id}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(category.name)}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(
+                                category.description || ""
+                            )}
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="edit-button"
+                                onclick="editCategory(${category.id})"
+                            >
+                                Sửa
+                            </button>
+
+                            <button
+                                class="danger-button"
+                                onclick="deleteCategory(${category.id})"
+                            >
+                                Xóa
+                            </button>
+
+                        </td>
+
+                    </tr>
+                `;
+
+            }).join("");
+
+    }
+
+
+    function openCategoryModal(id = null) {
+
+        document
+            .getElementById("categoryForm")
+            .reset();
+
+
+        document
+            .getElementById("categoryId")
+            .value = "";
+
+
+        if (id !== null) {
+
+            editCategory(id);
+
+            return;
+
+        }
+
+
+        document
+            .getElementById("categoryModal")
+            .classList.add("show");
+
+    }
+
+
+    function editCategory(id) {
+
+        const categories =
+            getCategories();
+
+
+        const category =
+            categories.find(
+                item =>
+                    item.id === id
+            );
+
+
+        if (!category) return;
+
+
+        document
+            .getElementById("categoryId")
+            .value =
+            category.id;
+
+
+        document
+            .getElementById("categoryName")
+            .value =
+            category.name;
+
+
+        document
+            .getElementById("categoryDescription")
+            .value =
+            category.description || "";
+
+
+        document
+            .getElementById("categoryModal")
+            .classList.add("show");
+
+    }
+
+
+    document
+        .getElementById("categoryForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const id =
+                    document
+                        .getElementById("categoryId")
+                        .value;
+
+
+                const name =
+                    document
+                        .getElementById("categoryName")
+                        .value
+                        .trim();
+
+
+                const description =
+                    document
+                        .getElementById(
+                            "categoryDescription"
+                        )
+                        .value
+                        .trim();
+
+
+                const categories =
+                    getCategories();
+
+
+                if (id) {
+
+                    const index =
+                        categories.findIndex(
+                            category =>
+                                category.id ===
+                                Number(id)
+                        );
+
+
+                    if (index !== -1) {
+
+                        categories[index] = {
+
+                            ...categories[index],
+
+                            name,
+
+                            description
+
+                        };
+
+                    }
+
+                } else {
+
+                    categories.push({
+
+                        id:
+                            categories.length
+                            ?
+                            Math.max(
+                                ...categories.map(
+                                    category =>
+                                        Number(
+                                            category.id
+                                        )
+                                )
+                            ) + 1
+                            :
+                            1,
+
+                        name,
+
+                        description
+
+                    });
+
+                }
+
+
+                saveCategories(
+                    categories
+                );
+
+
+                closeModal(
+                    "categoryModal"
+                );
+
+
+                loadAdmin();
+
+                showAdminSection(
+                    "categories"
+                );
+
+            }
+        );
+
+
+    function deleteCategory(id) {
+
+        if (
+            !confirm(
+                "Bạn có chắc muốn xóa danh mục này?"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        let categories =
+            getCategories();
+
+
+        categories =
+            categories.filter(
+                category =>
+                    category.id !== id
+            );
+
+
+        saveCategories(
+            categories
+        );
+
+
+        loadAdmin();
+
+        showAdminSection(
+            "categories"
+        );
+
+    }
+
+
+    /* =====================================================
+       TÀI KHOẢN
+    ===================================================== */
+
+    function renderUsers() {
+
+        const tbody =
+            document.getElementById(
+                "usersTable"
+            );
+
+
+        const users =
+            getUsers();
+
+
+        tbody.innerHTML =
+            users.map(user => {
+
+                return `
+                    <tr>
+
+                        <td>
+                            #${user.id}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(user.name)}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(user.username)}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(user.email)}
+                        </td>
+
+                        <td>
+                            ${escapeHTML(user.role)}
+                        </td>
+
+                        <td>
+
+                            <button
+                                class="edit-button"
+                                onclick="editUser(${user.id})"
+                            >
+                                Sửa
+                            </button>
+
+                            <button
+                                class="danger-button"
+                                onclick="deleteUser(${user.id})"
+                            >
+                                Xóa
+                            </button>
+
+                        </td>
+
+                    </tr>
+                `;
+
+            }).join("");
+
+    }
+
+
+    function openUserModal(id = null) {
+
+        document
+            .getElementById("userForm")
+            .reset();
+
+
+        document
+            .getElementById("userId")
+            .value = "";
+
+
+        if (id !== null) {
+
+            editUser(id);
+
+            return;
+
+        }
+
+
+        document
+            .getElementById("userModal")
+            .classList.add("show");
+
+    }
+
+
+    function editUser(id) {
+
+        const users =
+            getUsers();
+
+
+        const user =
+            users.find(
+                item =>
+                    item.id === id
+            );
+
+
+        if (!user) return;
+
+
+        document
+            .getElementById("userId")
+            .value =
+            user.id;
+
+
+        document
+            .getElementById("userName")
+            .value =
+            user.name;
+
+
+        document
+            .getElementById("userUsername")
+            .value =
+            user.username;
+
+
+        document
+            .getElementById("userEmail")
+            .value =
+            user.email;
+
+
+        document
+            .getElementById("userPassword")
+            .value = "";
+
+
+        document
+            .getElementById("userRole")
+            .value =
+            user.role;
+
+
+        document
+            .getElementById("userModal")
+            .classList.add("show");
+
+    }
+
+
+    document
+        .getElementById("userForm")
+        .addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const id =
+                    document
+                        .getElementById("userId")
+                        .value;
+
+
+                const name =
+                    document
+                        .getElementById("userName")
+                        .value
+                        .trim();
+
+
+                const username =
+                    document
+                        .getElementById(
+                            "userUsername"
+                        )
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("userEmail")
+                        .value
+                        .trim();
+
+
+                const password =
+                    document
+                        .getElementById(
+                            "userPassword"
+                        )
+                        .value;
+
+
+                const role =
+                    document
+                        .getElementById("userRole")
+                        .value;
+
+
+                const users =
+                    getUsers();
+
+
+                if (id) {
+
+                    const index =
+                        users.findIndex(
+                            user =>
+                                user.id ===
+                                Number(id)
+                        );
+
+
+                    if (index !== -1) {
+
+                        users[index].name =
+                            name;
+
+                        users[index].username =
+                            username;
+
+                        users[index].email =
+                            email;
+
+                        users[index].role =
+                            role;
+
+
+                        if (password) {
+
+                            users[index].password =
+                                password;
+
+                        }
+
+                    }
+
+                } else {
+
+                    users.push({
+
+                        id:
+                            users.length
+                            ?
+                            Math.max(
+                                ...users.map(
+                                    user =>
+                                        Number(
+                                            user.id
+                                        )
+                                )
+                            ) + 1
+                            :
+                            1,
+
+                        name,
+
+                        username,
+
+                        email,
+
+                        role,
+
+                        password:
+                            password || "123456"
+
+                    });
+
+                }
+
+
+                saveUsers(
+                    users
+                );
+
+
+                closeModal(
+                    "userModal"
+                );
+
+
+                loadAdmin();
+
+                showAdminSection(
+                    "users"
+                );
+
+            }
+        );
+
+
+    function deleteUser(id) {
+
+        const currentAdmin =
+            JSON.parse(
+                localStorage.getItem(
+                    "currentAdmin"
+                )
+                || "null"
+            );
+
+
+        if (
+            currentAdmin
+            &&
+            currentAdmin.id === id
+        ) {
+
+            alert(
+                "Không thể xóa tài khoản đang đăng nhập!"
+            );
+
+            return;
+
+        }
+
+
+        if (
+            !confirm(
+                "Bạn có chắc muốn xóa tài khoản này?"
+            )
+        ) {
+
+            return;
+
+        }
+
+
+        let users =
+            getUsers();
+
+
+        users =
+            users.filter(
+                user =>
+                    user.id !== id
+            );
+
+
+        saveUsers(users);
+
+
+        loadAdmin();
+
+        showAdminSection(
+            "users"
+        );
+
+    }
+
+
+    /* =====================================================
+       CATEGORY SELECT
+    ===================================================== */
+
+    function updateCategorySelect() {
+
+        const select =
+            document.getElementById(
+                "postCategory"
+            );
+
+
+        const categories =
+            getCategories();
+
+
+        select.innerHTML =
+            categories.map(category => {
+
+                return `
+                    <option value="${escapeHTML(
+                        category.name
+                    )}">
+                        ${escapeHTML(
+                            category.name
+                        )}
+                    </option>
+                `;
+
+            }).join("");
+
+    }
+
+
+    /* =====================================================
+       MODAL
+    ===================================================== */
+
+    function closeModal(id) {
+
+        document
+            .getElementById(id)
+            .classList.remove("show");
+
+    }
+
+
+    /* =====================================================
+       LOGOUT
+    ===================================================== */
+
+    function logout() {
+
+        const confirmLogout =
+            confirm(
+                "Bạn có chắc muốn đăng xuất không?"
+            );
+
+
+        if (!confirmLogout) {
+
+            return;
+
+        }
+
+
+        localStorage.removeItem(
+            "adminLoggedIn"
+        );
+
+
+        localStorage.removeItem(
+            "currentAdmin"
+        );
+
+
+        updateLoginButton();
+
+
+        showHome();
+
+    }
+
+
+    /* =====================================================
+       NÚT LOGIN / ADMIN
+    ===================================================== */
+
+    function updateLoginButton() {
+
+        const loggedIn =
+            localStorage.getItem(
+                "adminLoggedIn"
+            )
+            === "true";
+
+
+        const loginButton =
+            document.getElementById(
+                "loginNavButton"
+            );
+
+
+        const adminButton =
+            document.getElementById(
+                "adminNavButton"
+            );
+
+
+        if (loggedIn) {
+
+            loginButton.style.display =
+                "none";
+
+            adminButton.style.display =
+                "block";
+
+        } else {
+
+            loginButton.style.display =
+                "block";
+
+            adminButton.style.display =
+                "none";
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TRANG CHỦ - HIỂN THỊ BÀI VIẾT
+    ===================================================== */
+
+    function renderHomeNews() {
+
+        const grid =
+            document.getElementById(
+                "homeNewsGrid"
+            );
+
+
+        const posts =
+            getPosts();
+
+
+        const publishedPosts =
+            posts.filter(
+                post =>
+                    post.status ===
+                    "published"
+            );
+
+
+        if (
+            publishedPosts.length === 0
+        ) {
+
+            grid.innerHTML = `
+                <div
+                    style="
+                        background:white;
+                        padding:30px;
+                        border-radius:10px;
+                        grid-column:1/-1;
+                        text-align:center;
+                    "
+                >
+                    Chưa có bài viết được đăng.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        grid.innerHTML =
+            publishedPosts
+                .slice(0, 12)
+                .map(post => {
+
+                    return `
+                        <article
+                            class="news-card"
+                        >
+
+                            <span
+                                class="category"
+                            >
+                                ${escapeHTML(
+                                    post.category
+                                )}
+                            </span>
+
+                            <h3>
+                                ${escapeHTML(
+                                    post.title
+                                )}
+                            </h3>
+
+                            <p>
+                                ${escapeHTML(
+                                    post.content
+                                    ||
+                                    "Chưa có nội dung."
+                                )}
+                            </p>
+
+                            <span
+                                class="news-date"
+                            >
+                                📅 ${post.date}
+                            </span>
+
+                        </article>
+                    `;
+
+                })
+                .join("");
+
+    }
+
+
+    /* =====================================================
+       BẢO VỆ HTML
+    ===================================================== */
+
+    function escapeHTML(value) {
+
+        return String(value ?? "")
+            .replace(
+                /&/g,
+                "&amp;"
+            )
+            .replace(
+                /</g,
+                "&lt;"
+            )
+            .replace(
+                />/g,
+                "&gt;"
+            )
+            .replace(
+                /"/g,
+                "&quot;"
+            )
+            .replace(
+                /'/g,
+                "&#039;"
+            );
+
+    }
+
+
+    /* =====================================================
+       KHỞI ĐỘNG
+    ===================================================== */
+
+    getUsers();
+
+    getCategories();
+
+    getPosts();
+
+    updateLoginButton();
+
+    renderHomeNews();
+
+    showHome();
+
+</script>
+
+
+</body>
+
+</html>

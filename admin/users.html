@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
+
+    <title>Quản lý tài khoản</title>
+
+    <link
+        rel="stylesheet"
+        href="css/admin.css">
+</head>
+
+<body>
+
+    <div class="admin-layout">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                📰 Tin Mới 24h
+            </div>
+
+            <nav>
+
+                <a href="index.html">
+                    📊 Dashboard
+                </a>
+
+                <a href="posts.html">
+                    📰 Bài viết
+                </a>
+
+                <a href="categories.html">
+                    📂 Danh mục
+                </a>
+
+                <a
+                    class="active"
+                    href="users.html">
+                    👤 Tài khoản
+                </a>
+
+            </nav>
+
+            <button
+                class="logout-button"
+                onclick="logout()">
+                🚪 Đăng xuất
+            </button>
+
+        </aside>
+
+
+        <!-- ================= MAIN CONTENT ================= -->
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+            <header class="topbar">
+
+                <div>
+
+                    <h1>
+                        Quản lý tài khoản
+                    </h1>
+
+                    <p>
+                        Thêm và chỉnh sửa tài khoản quản trị.
+                    </p>
+
+                </div>
+
+                <div class="admin-profile">
+                    👤 Admin
+                </div>
+
+            </header>
+
+
+            <!-- ================= CONTENT ================= -->
+            <section class="content-card">
+
+                <!-- CONTENT HEADER -->
+                <div class="content-header">
+
+                    <div>
+
+                        <h2>
+                            Tài khoản
+                        </h2>
+
+                        <p id="userCount"></p>
+
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        onclick="openUserModal()">
+                        + Thêm tài khoản
+                    </button>
+
+                </div>
+
+
+                <!-- ================= USER TABLE ================= -->
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>ID</th>
+                                <th>Họ tên</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Vai trò</th>
+                                <th>Thao tác</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="userTable">
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= USER MODAL ================= -->
+    <div
+        id="userModal"
+        class="modal hidden">
+
+        <div class="modal-box">
+
+            <!-- MODAL HEADER -->
+            <div class="modal-header">
+
+                <h2 id="userModalTitle">
+                    Thêm tài khoản
+                </h2>
+
+                <button
+                    type="button"
+                    class="close-button"
+                    onclick="closeUserModal()">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- USER FORM -->
+            <form id="userForm">
+
+                <input
+                    type="hidden"
+                    id="userId">
+
+
+                <!-- HỌ TÊN -->
+                <div class="form-group">
+
+                    <label for="userName">
+                        Họ tên
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userName"
+                        required>
+
+                </div>
+
+
+                <!-- USERNAME -->
+                <div class="form-group">
+
+                    <label for="userUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="userUsername"
+                        required>
+
+                </div>
+
+
+                <!-- EMAIL -->
+                <div class="form-group">
+
+                    <label for="userEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="userEmail"
+                        required>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+                <div class="form-group">
+
+                    <label for="userPassword">
+                        Mật khẩu
+                    </label>
+
+                    <input
+                        type="password"
+                        id="userPassword"
+                        placeholder="Để trống nếu giữ mật khẩu cũ">
+
+                </div>
+
+
+                <!-- ROLE -->
+                <div class="form-group">
+
+                    <label for="userRole">
+                        Vai trò
+                    </label>
+
+                    <select id="userRole">
+
+                        <option>
+                            Admin
+                        </option>
+
+                        <option>
+                            Editor
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- MODAL ACTIONS -->
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="secondary-button"
+                        onclick="closeUserModal()">
+                        Hủy
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="primary-button">
+                        Lưu
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/admin.js"></script>
+    <script src="js/users.js"></script>
+
+</body>
+
+</html>
